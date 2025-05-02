@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Performance Logistics - Delivering Efficiency</title>
+    <meta name="description" content="Professional logistics services across the USA. Warehouse to doorstep delivery solutions.">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Variables */
+        :root {
+            --primary-color: #0A2E5A;
+            --accent-color: #6C757D;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --transition: all 0.3s ease;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+        
+        p { margin-bottom: 1rem; }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: #08306B;
+            transform: translateY(-2px);
+        }
+        
+        .text-center { text-align: center; }
+        .section-padding { padding: 5rem 0; }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 15px;
+            background: white;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 46, 90, 0.7), rgba(10, 46, 90, 0.7)), 
+                        url('https://maps.googleapis.com/maps/api/staticmap?center=United+States&zoom=4&size=1600x900&maptype=roadmap&key=YOUR_API_KEY') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Offices Section */
+        .offices {
+            background: var(--light-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Quote Form */
+        .quote-form {
+            background: var(--light-color);
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .nav-links li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .quote-form {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly" async defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                <span>Peak Performance Logistics</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#offices">Our Offices</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#quote">Get a Quote</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Delivering Efficiency.</h1>
+            <p>From Warehouse to Your Doorstep</p>
+            <a href="#quote" class="btn">Request a Quote</a>
+        </div>
+    </section>
+
+    <!-- Offices Section -->
+    <section id="offices" class="offices section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Offices — From Coast to Heartland</h2>
+                <p>With locations across the country, we're never far from your supply chain needs</p>
+            </div>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Reach out to our team for any inquiries or support</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-card fade-in">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Customer Service</h3>
+                    <p>+1 (800) 555-PPL1</p>
+                    <p>Available 24/7</p>
+                </div>
+                <div class="contact-card fade-in" style="animation-delay: 0.2s;">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Client Inquiries</h3>
+                    <p>clients@peakperformancelogistics.com</p>
+                </div>
+                <div class="contact-card fade-in" style="animation-delay: 0.4s;">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Careers</h3>
+                    <p>careers@peakperformancelogistics.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section id="quote" class="section-padding" style="background: var(--light-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Request a Quote</h2>
+                <p>Fill out the form below and our team will get back to you within 24 hours</p>
+            </div>
+            <form class="quote-form fade-in">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="cargo">Cargo Description</label>
+                    <textarea id="cargo" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="timeline">Delivery Timeline</label>
+                    <input type="text" id="timeline" class="form-control" placeholder="e.g., ASAP or specific date">
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Get Your Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="#" class="footer-logo">Peak Performance Logistics</a>
+                    <p>Professional logistics services across the USA</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#offices">Our Offices</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#quote">Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Peak Performance Logistics. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Google Map
+        function initMap() {
+            // Map options
+            const options = {
+                zoom: 4,
+                center: { lat: 39.8283, lng: -98.5795 }, // Center of US
+                styles: [
+                    {
+                        "featureType": "administrative",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#444444"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "color": "#f2f2f2"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "saturation": -100
+                            },
+                            {
+                                "lightness": 45
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "simplified"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "labels.icon",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "color": "#0A2E5A"
+                            },
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            // New map
+            const map = new google.maps.Map(document.getElementById('map'), options);
+
+            // Array of office locations
+            const offices = [
+                {
+                    name: 'Head Office',
+                    location: { lat: 40.7561, lng: -73.9869 },
+                    address: '550 5th Ave, New York, NY 10036',
+                    phone: '+1 (212) 555-1001',
+                    email: 'ny@peakperformancelogistics.com'
+                },
+                {
+                    name: 'Chicago Office',
+                    location: { lat: 41.8781, lng: -87.6298 },
+                    address: '233 S Wacker Dr, Chicago, IL 60606',
+                    phone: '+1 (312) 555-2002',
+                    email: 'chicago@peakperformancelogistics.com'
+                },
+                {
+                    name: 'Los Angeles Office',
+                    location: { lat: 34.0522, lng: -118.2437 },
+                    address: '633 W 5th St, Los Angeles, CA 90071',
+                    phone: '+1 (213) 555-3003',
+                    email: 'la@peakperformancelogistics.com'
+                },
+                {
+                    name: 'Houston Office',
+                    location: { lat: 29.7604, lng: -95.3698 },
+                    address: '1201 Louisiana St, Houston, TX 77002',
+                    phone: '+1 (713) 555-4004',
+                    email: 'houston@peakperformancelogistics.com'
+                },
+                {
+                    name: 'Miami Office',
+                    location: { lat: 25.7617, lng: -80.1918 },
+                    address: '701 Brickell Ave, Miami, FL 33131',
+                    phone: '+1 (305) 555-5005',
+                    email: 'miami@peakperformancelogistics.com'
+                },
+                {
+                    name: 'Philadelphia Office',
+                    location: { lat: 39.9526, lng: -75.1652 },
+                    address: '1701 John F Kennedy Blvd, Philadelphia, PA 19103',
+                    phone: '+1 (215) 555-6006',
+                    email: 'philly@peakperformancelogistics.com'
+                },
+                {
+                    name: 'Detroit Office',
+                    location: { lat: 42.3314, lng: -83.0458 },
+                    address: '500 Woodward Ave, Detroit, MI 48226',
+                    phone: '+1 (313) 555-7007',
+                    email: 'detroit@peakperformancelogistics.com'
+                },
+                {
+                    name: 'Phoenix Office',
+                    location: { lat: 33.4484, lng: -112.0740 },
+                    address: '400 E Van Buren St, Phoenix, AZ 85004',
+                    phone: '+1 (602) 555-8008',
+                    email: 'phoenix@peakperformancelogistics.com'
+                }
+            ];
+
+            // Add markers for each office
+            offices.forEach(office => {
+                const marker = new google.maps.Marker({
+                    position: office.location,
+                    map: map,
+                    title: office.name
+                });
+
+                // Info window content
+                const contentString = `
+                    <div style="padding: 10px;">
+                        <h3 style="margin: 0 0 10px; color: var(--primary-color);">${office.name}</h3>
+                        <p style="margin: 5px 0;">${office.address}</p>
+                        <p style="margin: 5px 0;"><strong>Phone:</strong> ${office.phone}</p>
+                        <p style="margin: 5px 0;"><strong>Email:</strong> ${office.email}</p>
+                    </div>
+                `;
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                // Click event for marker
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        const quoteForm = document.querySelector('.quote-form');
+        if (quoteForm) {
+            quoteForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const company = document.getElementById('company').value;
+                const cargo = document.getElementById('cargo').value;
+                const timeline = document.getElementById('timeline').value;
+                
+                // Here you would normally send the data to a server
+                // For demo purposes, we'll just show an alert
+                alert(`Thank you, ${name}! Your quote request has been received. We'll contact you at ${email} within 24 hours.`);
+                
+                // Reset form
+                this.reset();
+            });
+        }
+
+        // Scroll animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>
